@@ -1,0 +1,36 @@
+#include <stdio.h>
+
+struct Date {
+    int day;
+    int month;
+    int year;
+};
+
+struct Employee {
+    char name[50];
+    int id;
+    float salary;
+    struct Date dob; 
+};
+
+int main() {
+    struct Employee e1;
+
+    printf("Enter Name: ");
+    scanf("%s", e1.name);
+    printf("Enter ID: ");
+    scanf("%d", &e1.id);
+    printf("Enter Salary: ");
+    scanf("%f", &e1.salary);
+    
+    printf("Enter Date of Birth (dd mm yyyy): ");
+    scanf("%d %d %d", &e1.dob.day, &e1.dob.month, &e1.dob.year);
+
+    printf("\n--- Employee Details ---\n");
+    printf("Name: %s\n", e1.name);
+    printf("ID: %d\n", e1.id);
+    printf("Salary: %.2f\n", e1.salary);
+    printf("Date of Birth: %02d-%02d-%d\n", e1.dob.day, e1.dob.month, e1.dob.year);
+
+    return 0;
+}
