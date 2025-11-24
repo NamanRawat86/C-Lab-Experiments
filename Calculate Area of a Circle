@@ -1,0 +1,14 @@
+#include <stdio.h>
+#define PI 3.14159
+
+double calculateArea(double radius) {
+    return PI * radius * radius;
+}
+
+int main() {
+    double radius;
+    printf("Enter radius: ");
+    scanf("%lf", &radius);
+    printf("Area of circle: %.2f\n", calculateArea(radius));
+    return 0;
+}
