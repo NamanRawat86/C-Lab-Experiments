@@ -1,0 +1,39 @@
+#include <stdio.h>
+
+int main() {
+    int category, a, b;
+    printf("Select Operator Category:\n1. Relational\n2. Logical\n3. Bitwise\n4. Assignment\nEnter choice: ");
+    scanf("%d", &category);
+    
+    printf("Enter two integers a and b: ");
+    scanf("%d %d", &a, &b);
+
+    switch(category) {
+        case 1: // Relational
+            printf("Relational Results:\n");
+            printf("a > b: %d\n", a > b);
+            printf("a < b: %d\n", a < b);
+            printf("a == b: %d\n", a == b);
+            break;
+        case 2: // Logical
+            printf("Logical Results (using values as booleans):\n");
+            printf("a && b: %d\n", a && b);
+            printf("a || b: %d\n", a || b);
+            printf("!a: %d\n", !a);
+            break;
+        case 3: // Bitwise
+            printf("Bitwise Results:\n");
+            printf("a & b: %d\n", a & b);
+            printf("a | b: %d\n", a | b);
+            printf("a ^ b: %d\n", a ^ b);
+            break;
+        case 4: // Assignment
+            printf("Assignment demonstration:\n");
+            a += b; printf("After a += b, a = %d\n", a);
+            a -= b; printf("After a -= b, a = %d\n", a); // Reverting
+            break;
+        default:
+            printf("Invalid Category\n");
+    }
+    return 0;
+}
