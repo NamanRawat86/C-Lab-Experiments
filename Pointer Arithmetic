@@ -1,0 +1,34 @@
+#include <stdio.h>
+
+int main() {
+    int iArr[2] = {10, 20};
+    float fArr[2] = {1.5, 2.5};
+    char cArr[2] = {'A', 'B'};
+
+    int *iPtr = iArr;
+    float *fPtr = fArr;
+    char *cPtr = cArr;
+
+    printf("--- Integer Pointer (Size: %lu bytes) ---\n", sizeof(int));
+    printf("Original Address: %p\n", (void*)iPtr);
+    printf("Value: %d\n", *iPtr);
+    iPtr++; 
+    printf("Address after increment: %p\n", (void*)iPtr);
+    printf("Value after increment: %d\n\n", *iPtr);
+
+    printf("--- Float Pointer (Size: %lu bytes) ---\n", sizeof(float));
+    printf("Original Address: %p\n", (void*)fPtr);
+    printf("Value: %.1f\n", *fPtr);
+    fPtr++;
+    printf("Address after increment: %p\n", (void*)fPtr);
+    printf("Value after increment: %.1f\n\n", *fPtr);
+
+    printf("--- Char Pointer (Size: %lu byte) ---\n", sizeof(char));
+    printf("Original Address: %p\n", (void*)cPtr);
+    printf("Value: %c\n", *cPtr);
+    cPtr++;
+    printf("Address after increment: %p\n", (void*)cPtr);
+    printf("Value after increment: %c\n", *cPtr);
+
+    return 0;
+}
