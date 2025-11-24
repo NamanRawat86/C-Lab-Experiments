@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main() {
+    int iVar = 100;
+    float fVar = 50.5;
+    char cVar = 'Z';
+
+    int *iPtr = &iVar;
+    float *fPtr = &fVar;
+    char *cPtr = &cVar;
+
+    printf("Integer Variable Value: %d\n", iVar);
+    printf("Integer Pointer Value (Address): %p\n", (void*)iPtr);
+    printf("Value via Integer Pointer: %d\n\n", *iPtr);
+
+    printf("Float Variable Value: %.2f\n", fVar);
+    printf("Float Pointer Value (Address): %p\n", (void*)fPtr);
+    printf("Value via Float Pointer: %.2f\n\n", *fPtr);
+
+    printf("Char Variable Value: %c\n", cVar);
+    printf("Char Pointer Value (Address): %p\n", (void*)cPtr);
+    printf("Value via Char Pointer: %c\n", *cPtr);
+
+    return 0;
+}
