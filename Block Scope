@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main() {
+    int mainVar = 10;
+    
+    printf("Inside main function scope:\n");
+    printf("  mainVar: %d\n", mainVar);
+    
+    {
+        int blockVar = 20;
+        
+        printf("\n  Inside inner block:\n");
+        printf("    mainVar (accessible here): %d\n", mainVar);
+        printf("    blockVar (declared here): %d\n", blockVar);
+        
+        mainVar = 15;
+    } 
+    
+    printf("\nBack inside main function scope:\n");
+    printf("  mainVar (modified inside block): %d\n", mainVar);
+    
+    printf("  Attempting to access 'blockVar' here causes an error.\n");
+    
+    return 0;
+}
