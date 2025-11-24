@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <string.h>
+
+union Address {
+    char name[100];
+    char home_address[100];
+    char hostel_address[100];
+    char city[50];
+    char state[50];
+    char zip[20];
+};
+
+int main() {
+    union Address addr;
+
+    printf("--- Present Address Display (Using Union) ---\n");
+    
+    strcpy(addr.name, "John Doe");
+    printf("Name: %s\n", addr.name);
+
+    strcpy(addr.hostel_address, "Room 101, Boys Hostel");
+    printf("Hostel Address: %s\n", addr.hostel_address);
+
+    strcpy(addr.city, "Dehradun");
+    printf("City: %s\n", addr.city);
+
+    strcpy(addr.state, "Uttarakhand");
+    printf("State: %s\n", addr.state);
+
+    strcpy(addr.zip, "248007");
+    printf("Zip: %s\n", addr.zip);
+
+    return 0;
+}
