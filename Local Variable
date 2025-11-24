@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+void functionWithLocal() {
+    int localVar = 50;
+    
+    printf("Inside functionWithLocal:\n");
+    printf("  Accessing localVar: %d\n", localVar);
+}
+
+int main() {
+    printf("Inside main function:\n");
+    
+    functionWithLocal();
+    
+    printf("  Attempting to access 'localVar' inside main causes a compilation error.\n");
+    printf("  This proves local variables are not accessible outside their function.\n");
+    
+    return 0;
+}
