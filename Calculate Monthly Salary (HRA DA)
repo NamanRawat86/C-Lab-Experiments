@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+float calculateSalary(float basic, char cityType) {
+    float hra, da;
+    da = 0.05 * basic;
+    
+    if (cityType == 'M' || cityType == 'm') { // Metro
+        hra = 0.15 * basic;
+    } else { // Non-Metro
+        hra = 0.10 * basic;
+    }
+    
+    return basic + hra + da;
+}
+
+int main() {
+    float basic;
+    char cityType;
+    
+    printf("Enter Basic Salary: ");
+    scanf("%f", &basic);
+    printf("Is it a Metro city? (M/N): ");
+    scanf(" %c", &cityType);
+    
+    printf("Total Monthly Salary: %.2f\n", calculateSalary(basic, cityType));
+    return 0;
+}
