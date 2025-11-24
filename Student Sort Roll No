@@ -1,0 +1,36 @@
+#include <stdio.h>
+
+struct Student {
+    int roll_no;
+    char fname[50];
+    char lname[50];
+};
+
+int main() {
+    struct Student s[5], temp;
+    int i, j;
+
+    printf("Enter details for 5 students (Roll No, First Name, Last Name):\n");
+    for (i = 0; i < 5; i++) {
+        printf("Student %d: ", i + 1);
+        scanf("%d %s %s", &s[i].roll_no, s[i].fname, s[i].lname);
+    }
+
+    for (i = 0; i < 5 - 1; i++) {
+        for (j = 0; j < 5 - i - 1; j++) {
+            if (s[j].roll_no > s[j + 1].roll_no) {
+                temp = s[j];
+                s[j] = s[j + 1];
+                s[j + 1] = temp;
+            }
+        }
+    }
+
+    printf("\n--- Student Records (Sorted by Roll No) ---\n");
+    printf("Roll No\tFirst Name\tLast Name\n");
+    for (i = 0; i < 5; i++) {
+        printf("%d\t%s\t\t%s\n", s[i].roll_no, s[i].fname, s[i].lname);
+    }
+
+    return 0;
+}
