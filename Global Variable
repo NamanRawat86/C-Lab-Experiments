@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int globalVar = 100;
+
+void displayGlobal() {
+    printf("Inside displayGlobal function:\n");
+    printf("  Value of globalVar: %d\n", globalVar);
+    
+    globalVar = 200;
+    printf("  Value of globalVar after modification: %d\n", globalVar);
+}
+
+int main() {
+    printf("Inside main function (start):\n");
+    printf("  Value of globalVar: %d\n", globalVar);
+    
+    displayGlobal();
+    
+    printf("Inside main function (end):\n");
+    printf("  Value of globalVar (reflects change made in function): %d\n", globalVar);
+    
+    return 0;
+}
